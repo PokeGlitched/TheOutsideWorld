@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bc3yhs0k1ma5k" path="res://assets/images/player/Jump (32x32).png" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://x24aeedwfvyq" path="res://assets/images/player/Run (32x32).png" id="4_fjrip"]
 [ext_resource type="AudioStream" uid="uid://b4begn8t7klec" path="res://assets/sound/jump.wav" id="6_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://bixcsw60xjiex" path="res://assets/sound/death.wav" id="7_fjrip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("1_dqkch")
@@ -257,8 +258,12 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=433831659]
+texture_filter = 1
 position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_3wllo")
 
 [node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=344721749]
 stream = ExtResource("6_tuyoq")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=352743016]
+stream = ExtResource("7_fjrip")
