@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://k7rrcqfq4bte" path="res://scenes/player.tscn" id="3_nsrm0"]
 [ext_resource type="PackedScene" uid="uid://bus65wpu17ol" path="res://scenes/enemy.tscn" id="5_6761a"]
 [ext_resource type="PackedScene" uid="uid://o2lxmf02rsbj" path="res://scenes/collectible.tscn" id="6_sk5k4"]
+[ext_resource type="Texture2D" uid="uid://bujqj2ol560sp" path="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png" id="7_oc4kc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2rd4"]
 texture = ExtResource("1_tjy05")
@@ -720,6 +721,87 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_y2rd4")
 sources/1 = SubResource("TileSetAtlasSource_52is8")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8va5"]
+atlas = ExtResource("7_oc4kc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dga24"]
+atlas = ExtResource("7_oc4kc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxy0u"]
+atlas = ExtResource("7_oc4kc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_excbq"]
+atlas = ExtResource("7_oc4kc")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iav0o"]
+atlas = ExtResource("7_oc4kc")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnkej"]
+atlas = ExtResource("7_oc4kc")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm8aj"]
+atlas = ExtResource("7_oc4kc")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtwp4"]
+atlas = ExtResource("7_oc4kc")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwr0g"]
+atlas = ExtResource("7_oc4kc")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bahl2"]
+atlas = ExtResource("7_oc4kc")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jv104"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8va5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dga24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxy0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_excbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iav0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnkej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm8aj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtwp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwr0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bahl2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wllo"]
+size = Vector2(32.00003, 46.54546)
+
 [node name="LevelRoot" type="Node2D" unique_id=486641070]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1844454069]
@@ -754,3 +836,19 @@ position = Vector2(120, 200)
 
 [node name="apple3" parent="Collectibles" unique_id=47076160 instance=ExtResource("6_sk5k4")]
 position = Vector2(201, 57)
+
+[node name="Flag" type="AnimatedSprite2D" parent="." unique_id=661879120]
+texture_filter = 1
+position = Vector2(48, 37)
+scale = Vector2(0.34375, 0.34375)
+sprite_frames = SubResource("SpriteFrames_jv104")
+autoplay = "default"
+frame_progress = 0.3761394
+metadata/_edit_group_ = true
+
+[node name="Exit" type="Area2D" parent="Flag" unique_id=1340622846]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flag/Exit" unique_id=1470608966]
+position = Vector2(1.4545593, 8.727272)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_3wllo")
