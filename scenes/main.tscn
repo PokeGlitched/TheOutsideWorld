@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dasg4jg7isf3v" path="res://scripts/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://mcv20ox08clj" path="res://scenes/levels/level1.tscn" id="1_o5qli"]
 [ext_resource type="FontFile" uid="uid://c4u76gef8wkl5" path="res://assets/fonts/Square-Black.ttf" id="3_sugp2"]
+[ext_resource type="AudioStream" uid="uid://dvwm4xha1rki0" path="res://assets/sound/music.ogg" id="4_jyhfs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wllo"]
 bg_color = Color(0.7764706, 0.7372549, 0.62352943, 1)
@@ -61,3 +62,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=448164266]
+stream = ExtResource("4_jyhfs")
+volume_db = -15.0
+pitch_scale = 2.0
+autoplay = true
+max_distance = 4096.0

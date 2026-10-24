@@ -197,6 +197,7 @@ shape = SubResource("CircleShape2D_h071m")
 
 [node name="CollectedSound" type="AudioStreamPlayer2D" parent="." unique_id=689818021]
 stream = ExtResource("3_6gns2")
+volume_db = -15.0
 pitch_scale = 1.5
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

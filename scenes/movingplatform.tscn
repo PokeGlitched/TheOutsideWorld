@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://c6ee2ohtxoga"]
+
+[ext_resource type="Texture2D" uid="uid://crinp5wf51cba" path="res://assets/images/tilemap/tilemap_theoutsideworld.png" id="1_n41ed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wllo"]
+size = Vector2(48, 16)
+
+[sub_resource type="Animation" id="Animation_k55no"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0qx0v"]
+resource_name = "move"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(80, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ygoro"]
+_data = {
+&"RESET": SubResource("Animation_k55no"),
+&"move": SubResource("Animation_0qx0v")
+}
+
+[node name="movingplatform" type="Node2D" unique_id=316022466]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1558635936]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=198910905]
+texture_filter = 1
+texture = ExtResource("1_n41ed")
+region_enabled = true
+region_rect = Rect2(48, 80, 48, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1499016826]
+shape = SubResource("RectangleShape2D_3wllo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D" unique_id=1536191880]
+libraries/ = SubResource("AnimationLibrary_ygoro")
+autoplay = &"move"

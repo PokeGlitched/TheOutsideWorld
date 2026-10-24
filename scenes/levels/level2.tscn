@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bus65wpu17ol" path="res://scenes/enemy.tscn" id="5_gycjm"]
 [ext_resource type="PackedScene" uid="uid://o2lxmf02rsbj" path="res://scenes/collectible.tscn" id="6_8i1lk"]
 [ext_resource type="Texture2D" uid="uid://bujqj2ol560sp" path="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png" id="7_hgky1"]
+[ext_resource type="PackedScene" uid="uid://dkl0fpjpr2f8i" path="res://scenes/deathzone.tscn" id="8_k0mew"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2rd4"]
 texture = ExtResource("2_k0mew")
@@ -806,10 +807,9 @@ size = Vector2(32.00003, 46.54546)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1844454069]
 texture_filter = 1
-offset_left = -13.0
-offset_top = 14.0
-offset_right = 499.0
-offset_bottom = 302.0
+offset_left = 1.0
+offset_right = 513.0
+offset_bottom = 288.0
 texture = ExtResource("1_dj4wq")
 stretch_mode = 1
 
@@ -858,3 +858,6 @@ metadata/_edit_group_ = true
 position = Vector2(1.4545593, 8.727272)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_3wllo")
+
+[node name="deathzone" parent="." unique_id=353749348 instance=ExtResource("8_k0mew")]
+position = Vector2(216, 269)

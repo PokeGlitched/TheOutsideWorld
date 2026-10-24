@@ -5,6 +5,12 @@ extends Node2D
 var level: int = 1
 var score: int = 0
 var current_level_root: Node = null
+var is_loading: bool = false
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("reset") and not is_loading:
+		_load_level(level, false, true)
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +24,13 @@ func _ready() -> void:
 #
 
 func _load_level(level_number, first_load: bool, reset_score = true) -> void:
+	is_loading = true
+	
+	if current_level_root:
+		var player = get_node_or_null("player")
+		if player:
+			player.can_move = false
+	
 	#Fade Out
 	if not first_load:
 		await _fade(1.0)
@@ -36,11 +49,26 @@ func _load_level(level_number, first_load: bool, reset_score = true) -> void:
 	current_level_root.name = "LevelRoot"
 	_setup_level(current_level_root)
 	
+	var new_player = get_node_or_null("player")
+	if new_player:
+		new_player.can_move = false
+	
 	#Fade In
 	await _fade(0.0)
 	
 	
+	if new_player:
+		new_player.can_move = true
+	is_loading = false
+	
+	
 func _setup_level(level_root: Node) -> void:
+	
+	#Connect dp
+	var deathplane = level_root.get_node_or_null("deathzone")
+	if deathplane:
+		deathplane.player_fell.connect(_on_player_died)
+	
 	#Connect exit
 	var exit = level_root.get_node_or_null("Flag/Exit")
 	if exit:
@@ -57,7 +85,8 @@ func _setup_level(level_root: Node) -> void:
 		for enemy in enemies.get_children():
 			enemy.player_died.connect(_on_player_died)
 	
-
+	
+	
 # 
 # Signal Handlers
 #
@@ -78,7 +107,9 @@ func increase_score() -> void:
 	score += 1
 	score_label.text = "Score: %s" % score
 	
-#
+
+		
+
 # Fade
 #
 func _fade(to_alpha: float) -> void:
