@@ -36,8 +36,9 @@ func _load_level(level_number, first_load: bool, reset_score = true) -> void:
 		await _fade(1.0)
 		
 	if reset_score:
-		score = 0
-		score_label.text = "Score: 0"
+		score += -3
+		if score < 0:
+			score = 0
 	
 	if current_level_root:
 		current_level_root.queue_free()
@@ -54,6 +55,7 @@ func _load_level(level_number, first_load: bool, reset_score = true) -> void:
 		new_player.can_move = false
 	
 	#Fade In
+	score_label.text = "Score: %s" % score
 	await _fade(0.0)
 	
 	
