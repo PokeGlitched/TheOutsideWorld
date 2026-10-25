@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://dnc3bpoeh1r4h"]
+
+[ext_resource type="Script" uid="uid://pkiah2hthlkr" path="res://scripts/win.gd" id="1_tylv2"]
+[ext_resource type="StyleBox" uid="uid://bpvpotjtw3p8x" path="res://assets/images/mainmenustuff/new_style_box_texture.tres" id="2_5vxan"]
+[ext_resource type="Texture2D" uid="uid://bnhm4b6s8qprk" path="res://assets/images/mainmenustuff/mmborder_theoutsideworld.png" id="3_4826q"]
+[ext_resource type="FontFile" uid="uid://c7fbp2fltylha" path="res://assets/fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="4_tylv2"]
+[ext_resource type="Texture2D" uid="uid://c50hvyygpmrer" path="res://assets/images/mainmenustuff/placeholder.png" id="5_d70ak"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_woh6y"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rx2gv"]
+bg_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doh3d"]
+bg_color = Color(0.7529412, 0.7529412, 0.7529412, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ir6vj"]
+
+[node name="Win" type="Control" unique_id=303680131]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tylv2")
+
+[node name="Panel" type="Panel" parent="." unique_id=1919844923]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_5vxan")
+
+[node name="TextureRect2" type="TextureRect" parent="Panel" unique_id=1518802973]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4826q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1973957053]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_right = 62.5
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mm" type="Button" parent="VBoxContainer" unique_id=979225357]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 20
+theme_override_fonts/font = ExtResource("4_tylv2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_woh6y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rx2gv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_doh3d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ir6vj")
+text = "Main Menu
+"
+
+[node name="exit" type="Button" parent="VBoxContainer" unique_id=791983230]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 20
+theme_override_fonts/font = ExtResource("4_tylv2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_woh6y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rx2gv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_doh3d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ir6vj")
+text = "Exit"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=597630226]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.44500002
+anchor_right = 0.5
+anchor_bottom = 0.44500002
+offset_left = -128.0
+offset_top = -96.16
+offset_right = 128.0
+offset_bottom = -0.16000366
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_d70ak")
+
+[connection signal="pressed" from="VBoxContainer/mm" to="." method="_on_mm_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]

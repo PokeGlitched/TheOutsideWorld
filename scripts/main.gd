@@ -98,9 +98,12 @@ func _on_player_died(body):
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	if body.name == "player":
-		level += 1
-		body.can_move = false
-		await _load_level(level, false, false)
+		if level < 4:
+			level += 1
+			body.can_move = false
+			await _load_level(level, false, false)
+		else:
+			get_tree().change_scene_to_file("res://scenes/win.tscn")
 #
 # Score
 #

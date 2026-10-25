@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c4u76gef8wkl5"
-path="res://.godot/imported/Square-Black.ttf-de15d4c54e84a512cb5a21b783a303c7.fontdata"
+uid="uid://c7fbp2fltylha"
+path="res://.godot/imported/DynaPuff-VariableFont_wdth,wght.ttf-e714cf117d7cbc54f50f816b7066f21b.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/Square-Black.ttf"
-dest_files=["res://.godot/imported/Square-Black.ttf-de15d4c54e84a512cb5a21b783a303c7.fontdata"]
+source_file="res://assets/fonts/DynaPuff-VariableFont_wdth,wght.ttf"
+dest_files=["res://.godot/imported/DynaPuff-VariableFont_wdth,wght.ttf-e714cf117d7cbc54f50f816b7066f21b.fontdata"]
 
 [params]
 
