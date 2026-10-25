@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://bpvpotjtw3p8x"]
+
+[ext_resource type="Texture2D" uid="uid://411eufw76d17" path="res://assets/images/background/Blue.png" id="1_pgwis"]
+
+[resource]
+texture = ExtResource("1_pgwis")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
