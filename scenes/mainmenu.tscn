@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://cq3knir2njs6y"]
 
 [ext_resource type="Script" uid="uid://30cu8hw4ilrg" path="res://scripts/mainmenu.gd" id="1_3vvtq"]
-[ext_resource type="StyleBox" uid="uid://bpvpotjtw3p8x" path="res://assets/images/mainmenustuff/new_style_box_texture.tres" id="1_r3g3c"]
+[ext_resource type="StyleBox" uid="uid://bpvpotjtw3p8x" path="res://assets/images/mainmenustuff/bgtexture.tres" id="1_r3g3c"]
 [ext_resource type="Texture2D" uid="uid://c50hvyygpmrer" path="res://assets/images/mainmenustuff/placeholder.png" id="3_3vvtq"]
-[ext_resource type="Texture2D" uid="uid://bnhm4b6s8qprk" path="res://assets/images/mainmenustuff/mmborder_theoutsideworld.png" id="3_s5g8n"]
+[ext_resource type="Texture2D" uid="uid://bnhm4b6s8qprk" path="res://assets/images/mainmenustuff/mainmenuborder.png" id="3_s5g8n"]
 [ext_resource type="FontFile" uid="uid://c7fbp2fltylha" path="res://assets/fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="4_s5g8n"]
+[ext_resource type="AudioStream" uid="uid://dvwm4xha1rki0" path="res://assets/sound/music.ogg" id="6_7yvfd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3g3c"]
 bg_color = Color(1, 1, 1, 1)
@@ -126,6 +127,13 @@ offset_bottom = -0.16000366
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_3vvtq")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=28117963]
+stream = ExtResource("6_7yvfd")
+volume_db = -15.0
+pitch_scale = 2.0
+autoplay = true
+max_distance = 4096.0
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/controls" to="." method="_on_controls_pressed"]

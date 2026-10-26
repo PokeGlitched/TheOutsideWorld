@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnhm4b6s8qprk"
-path="res://.godot/imported/mmborder_theoutsideworld.png-9dbab57804c73c0431ffc832c2c853ab.ctex"
+uid="uid://b5ykjfiea2ifi"
+path="res://.godot/imported/youwinspritesheet.png-218e7e7a713d413bf871bdece1efe6ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/mainmenustuff/mmborder_theoutsideworld.png"
-dest_files=["res://.godot/imported/mmborder_theoutsideworld.png-9dbab57804c73c0431ffc832c2c853ab.ctex"]
+source_file="res://assets/images/mainmenustuff/youwinspritesheet.png"
+dest_files=["res://.godot/imported/youwinspritesheet.png-218e7e7a713d413bf871bdece1efe6ea.ctex"]
 
 [params]
 
