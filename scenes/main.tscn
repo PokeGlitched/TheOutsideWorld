@@ -17,12 +17,59 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyhfs"]
+bg_color = Color(0.8392157, 0.83137256, 0.6862745, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5137255, 0.41568628, 0.38431373, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbgi4"]
+bg_color = Color(0.7764706, 0.7372549, 0.62352943, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5137255, 0.41568628, 0.38431373, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tefeu"]
+bg_color = Color(0.7764706, 0.7372549, 0.62352943, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5137255, 0.41568628, 0.38431373, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6xl0"]
+
 [node name="Main" type="Node2D" unique_id=1235671339]
 script = ExtResource("1_0wfyh")
 
 [node name="LevelRoot" parent="." unique_id=486641070 instance=ExtResource("1_o5qli")]
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=640156133]
+
+[node name="Fade" type="ColorRect" parent="HUD" unique_id=107903528]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="ScorePanel" type="Panel" parent="HUD" unique_id=2106464311]
 texture_filter = 1
@@ -54,14 +101,48 @@ text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Fade" type="ColorRect" parent="HUD" unique_id=107903528]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+[node name="mm" type="Button" parent="HUD" unique_id=1435564969]
+texture_filter = 1
+offset_left = 109.0
+offset_right = 192.0
+offset_bottom = 20.0
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/h_separation = 20
+theme_override_fonts/font = ExtResource("3_jyhfs")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tbgi4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tefeu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o6xl0")
+text = "Main Menu
+"
+
+[node name="exit" type="Button" parent="HUD" unique_id=1757957321]
+texture_filter = 1
+offset_left = 320.0
+offset_right = 353.0
+offset_bottom = 20.0
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/h_separation = 20
+theme_override_fonts/font = ExtResource("3_jyhfs")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tbgi4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tefeu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o6xl0")
+text = "Exit"
 
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=448164266]
 stream = ExtResource("4_jyhfs")
@@ -69,3 +150,6 @@ volume_db = -15.0
 pitch_scale = 2.0
 autoplay = true
 max_distance = 4096.0
+
+[connection signal="pressed" from="HUD/mm" to="." method="_on_mm_pressed"]
+[connection signal="pressed" from="HUD/exit" to="." method="_on_exit_pressed"]
