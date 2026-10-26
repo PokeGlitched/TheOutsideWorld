@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dar26ojda51h5"
-path="res://.godot/imported/Walk (38x24).png-dbf8ffc20cd31e1a925c130eb70ab4a1.ctex"
+uid="uid://cs6wgx4d4ctso"
+path="res://.godot/imported/tvenemy.png-ea74184f38400377f560887eade679b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/enemy/Walk (38x24).png"
-dest_files=["res://.godot/imported/Walk (38x24).png-dbf8ffc20cd31e1a925c130eb70ab4a1.ctex"]
+source_file="res://assets/images/enemy/tvenemy.png"
+dest_files=["res://.godot/imported/tvenemy.png-ea74184f38400377f560887eade679b1.ctex"]
 
 [params]
 
