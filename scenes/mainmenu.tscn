@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://30cu8hw4ilrg" path="res://scripts/mainmenu.gd" id="1_3vvtq"]
 [ext_resource type="StyleBox" uid="uid://bpvpotjtw3p8x" path="res://assets/images/mainmenustuff/bgtexture.tres" id="1_r3g3c"]
-[ext_resource type="Texture2D" uid="uid://c50hvyygpmrer" path="res://assets/images/mainmenustuff/placeholder.png" id="3_3vvtq"]
 [ext_resource type="Texture2D" uid="uid://bnhm4b6s8qprk" path="res://assets/images/mainmenustuff/mainmenuborder.png" id="3_s5g8n"]
 [ext_resource type="FontFile" uid="uid://c7fbp2fltylha" path="res://assets/fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="4_s5g8n"]
+[ext_resource type="Texture2D" uid="uid://bgtk7icq7c0il" path="res://assets/images/mainmenustuff/titlecard.png" id="5_7yvfd"]
 [ext_resource type="AudioStream" uid="uid://dvwm4xha1rki0" path="res://assets/sound/music.ogg" id="6_7yvfd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3g3c"]
@@ -17,6 +17,91 @@ bg_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
 bg_color = Color(0.7529412, 0.7529412, 0.7529412, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dfy5j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfy5j"]
+atlas = ExtResource("5_7yvfd")
+region = Rect2(0, 0, 123, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85riq"]
+atlas = ExtResource("5_7yvfd")
+region = Rect2(123, 0, 123, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf3n4"]
+atlas = ExtResource("5_7yvfd")
+region = Rect2(246, 0, 123, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h73c4"]
+atlas = ExtResource("5_7yvfd")
+region = Rect2(369, 0, 123, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uui5l"]
+atlas = ExtResource("5_7yvfd")
+region = Rect2(492, 0, 123, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hago"]
+atlas = ExtResource("5_7yvfd")
+region = Rect2(615, 0, 123, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjjcl"]
+atlas = ExtResource("5_7yvfd")
+region = Rect2(738, 0, 123, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kait0"]
+atlas = ExtResource("5_7yvfd")
+region = Rect2(861, 0, 123, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pj40"]
+atlas = ExtResource("5_7yvfd")
+region = Rect2(984, 0, 123, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkpmc"]
+atlas = ExtResource("5_7yvfd")
+region = Rect2(1107, 0, 123, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsdjo"]
+atlas = ExtResource("5_7yvfd")
+region = Rect2(1230, 0, 123, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3wllo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfy5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85riq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wf3n4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h73c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uui5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hago")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjjcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kait0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pj40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkpmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsdjo")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 20.0
+}]
 
 [node name="main_menu" type="Control" unique_id=911025488]
 texture_filter = 1
@@ -113,20 +198,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7yvfd")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dfy5j")
 text = "Exit"
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=224919520]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.44500002
-anchor_right = 0.5
-anchor_bottom = 0.44500002
-offset_left = -128.0
-offset_top = -96.16
-offset_right = 128.0
-offset_bottom = -0.16000366
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_3vvtq")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=218279256]
+position = Vector2(256, 92)
+sprite_frames = SubResource("SpriteFrames_3wllo")
+autoplay = "default"
+frame_progress = 0.22875762
 
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=28117963]
 stream = ExtResource("6_7yvfd")
